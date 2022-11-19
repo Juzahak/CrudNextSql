@@ -1,8 +1,14 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import useSwr, { mutate } from "swr";
+
+const fetcher = (url) => fetch(url).then((res) => res.json());
 
 export default function Home() {
+  const { data: products } = useSwr(`api/products`, fetcher);
+  console.log(products)
+
   return (
     <div className={styles.container}>
       <Head>
