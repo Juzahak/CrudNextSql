@@ -6,8 +6,19 @@ import useSwr, { mutate } from "swr";
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
 export default function Home() {
+
   const { data: products } = useSwr(`api/products`, fetcher);
   console.log(products)
+
+  // const handleDelete = async (id) => {
+  //   console.log(id);
+  //   try {
+  //     const res = await axios.delete(`/api/products/${id}`);
+  //     mutate(`/api/products`);
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // };
 
   return (
     <div className={styles.container}>
