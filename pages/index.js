@@ -2,23 +2,22 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import useSwr, { mutate } from "swr";
+import { useEffect, useState } from 'react';
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
 export default function Home() {
-
+  const [imagem, setImagem] = useState("")
+  const [imagemweb, setImagemweb] = useState("")
   const { data: products } = useSwr(`api/products`, fetcher);
-  console.log(products)
 
-  // const handleDelete = async (id) => {
-  //   console.log(id);
-  //   try {
-  //     const res = await axios.delete(`/api/products/${id}`);
-  //     mutate(`/api/products`);
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // };
+  useEffect(() => {
+     products?.map((item) => {
+      var replaced = item?.image.replace('[{"imageName":"', '')
+      var replaced2 = replaced?.replace('"}]', '')
+      setImagemweb(replaced2)
+    })
+  })
 
   return (
     <div className={styles.container}>
@@ -33,13 +32,31 @@ export default function Home() {
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
 
+
+        <Image src={imagemweb || require("../images/11.jpg")} width={500} height={500} alt="" />
+        <Image src={imagemweb || require("../images/11.jpg")} width={500} height={500} alt="" />
+        <Image src={imagemweb || require("../images/11.jpg")} width={500} height={500} alt="" />
+        <Image src={imagemweb || require("../images/11.jpg")} width={500} height={500} alt="" />
+        <Image src={imagemweb || require("../images/11.jpg")} width={500} height={500} alt="" />
+        <Image src={imagemweb || require("../images/11.jpg")} width={500} height={500} alt="" />
+        <Image src={imagemweb || require("../images/11.jpg")} width={500} height={500} alt="" />
+        <Image src={imagemweb || require("../images/11.jpg")} width={500} height={500} alt="" />
+        <Image src={imagemweb || require("../images/11.jpg")} width={500} height={500} alt="" />
+        <Image src={imagemweb || require("../images/11.jpg")} width={500} height={500} alt="" />
+        <Image src={imagemweb || require("../images/11.jpg")} width={500} height={500} alt="" />
+        <Image src={imagemweb || require("../images/11.jpg")} width={500} height={500} alt="" />
+        <Image src={imagemweb || require("../images/11.jpg")} width={500} height={500} alt="" />
+        <Image src={imagemweb || require("../images/11.jpg")} width={500} height={500} alt="" />
+        <Image src={imagemweb || require("../images/11.jpg")} width={500} height={500} alt="" />
+
+
         <p className={styles.description}>
           Get started by editing{' '}
           <code className={styles.code}>pages/index.js</code>
         </p>
 
         <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
+          <a onClick={() => string()} className={styles.card}>
             <h2>Documentation &rarr;</h2>
             <p>Find in-depth information about Next.js features and API.</p>
           </a>
@@ -58,7 +75,6 @@ export default function Home() {
           </a>
 
           <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
             className={styles.card}
           >
             <h2>Deploy &rarr;</h2>
