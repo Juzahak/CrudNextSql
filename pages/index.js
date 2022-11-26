@@ -32,23 +32,24 @@ export default function Home() {
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
 
-
-        <Image src={imagemweb || require("../images/11.jpg")} width={500} height={500} alt="" />
-        <Image src={imagemweb || require("../images/11.jpg")} width={500} height={500} alt="" />
-        <Image src={imagemweb || require("../images/11.jpg")} width={500} height={500} alt="" />
-        <Image src={imagemweb || require("../images/11.jpg")} width={500} height={500} alt="" />
-        <Image src={imagemweb || require("../images/11.jpg")} width={500} height={500} alt="" />
-        <Image src={imagemweb || require("../images/11.jpg")} width={500} height={500} alt="" />
-        <Image src={imagemweb || require("../images/11.jpg")} width={500} height={500} alt="" />
-        <Image src={imagemweb || require("../images/11.jpg")} width={500} height={500} alt="" />
-        <Image src={imagemweb || require("../images/11.jpg")} width={500} height={500} alt="" />
-        <Image src={imagemweb || require("../images/11.jpg")} width={500} height={500} alt="" />
-        <Image src={imagemweb || require("../images/11.jpg")} width={500} height={500} alt="" />
-        <Image src={imagemweb || require("../images/11.jpg")} width={500} height={500} alt="" />
-        <Image src={imagemweb || require("../images/11.jpg")} width={500} height={500} alt="" />
-        <Image src={imagemweb || require("../images/11.jpg")} width={500} height={500} alt="" />
-        <Image src={imagemweb || require("../images/11.jpg")} width={500} height={500} alt="" />
-
+      <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
+        <Image src={imagemweb || require("../images/11.jpg")} width={200} height={200} alt="" />
+        <Image src={imagemweb || require("../images/11.jpg")} width={200} height={200} alt="" />
+        <Image src={imagemweb || require("../images/11.jpg")} width={200} height={200} alt="" />
+        <Image src={imagemweb || require("../images/11.jpg")} width={200} height={200} alt="" />
+        <Image src={imagemweb || require("../images/11.jpg")} width={200} height={200} alt="" />
+        <Image src={imagemweb || require("../images/11.jpg")} width={200} height={200} alt="" />
+        <Image src={imagemweb || require("../images/11.jpg")} width={200} height={200} alt="" />
+        <Image src={imagemweb || require("../images/11.jpg")} width={200} height={200} alt="" />
+        <Image src={imagemweb || require("../images/11.jpg")} width={200} height={200} alt="" />
+        <Image src={imagemweb || require("../images/11.jpg")} width={200} height={200} alt="" />
+        <Image src={imagemweb || require("../images/11.jpg")} width={200} height={200} alt="" />
+        <Image src={imagemweb || require("../images/11.jpg")} width={200} height={200} alt="" />
+        <Image src={imagemweb || require("../images/11.jpg")} width={200} height={200} alt="" />
+        <Image src={imagemweb || require("../images/11.jpg")} width={200} height={200} alt="" />
+        <Image src={imagemweb || require("../images/11.jpg")} width={200} height={200} alt="" />
+        <Image src={imagemweb || require("../images/11.jpg")} width={600} height={600} alt="" />
+      </div>
 
         <p className={styles.description}>
           Get started by editing{' '}
