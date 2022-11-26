@@ -11,14 +11,6 @@ export default function Home() {
   const [imagemweb, setImagemweb] = useState("")
   const { data: products } = useSwr(`api/products`, fetcher);
 
-  useEffect(() => {
-     products?.map((item) => {
-      var replaced = item?.image.replace('[{"imageName":"', '')
-      var replaced2 = replaced?.replace('"}]', '')
-      setImagemweb(replaced2)
-    })
-  })
-
   return (
     <div className={styles.container}>
       <Head>
@@ -32,24 +24,32 @@ export default function Home() {
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
 
-      <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
-        <Image src={imagemweb || require("../images/11.jpg")} width={200} height={200} alt="" />
-        <Image src={imagemweb || require("../images/11.jpg")} width={200} height={200} alt="" />
-        <Image src={imagemweb || require("../images/11.jpg")} width={200} height={200} alt="" />
-        <Image src={imagemweb || require("../images/11.jpg")} width={200} height={200} alt="" />
-        <Image src={imagemweb || require("../images/11.jpg")} width={200} height={200} alt="" />
-        <Image src={imagemweb || require("../images/11.jpg")} width={200} height={200} alt="" />
-        <Image src={imagemweb || require("../images/11.jpg")} width={200} height={200} alt="" />
-        <Image src={imagemweb || require("../images/11.jpg")} width={200} height={200} alt="" />
-        <Image src={imagemweb || require("../images/11.jpg")} width={200} height={200} alt="" />
-        <Image src={imagemweb || require("../images/11.jpg")} width={200} height={200} alt="" />
-        <Image src={imagemweb || require("../images/11.jpg")} width={200} height={200} alt="" />
-        <Image src={imagemweb || require("../images/11.jpg")} width={200} height={200} alt="" />
-        <Image src={imagemweb || require("../images/11.jpg")} width={200} height={200} alt="" />
-        <Image src={imagemweb || require("../images/11.jpg")} width={200} height={200} alt="" />
-        <Image src={imagemweb || require("../images/11.jpg")} width={200} height={200} alt="" />
-        <Image src={imagemweb || require("../images/11.jpg")} width={600} height={600} alt="" />
-      </div>
+        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
+          {products?.map((item) => {
+            var replaced = item?.image.replace('[{"imageName":"', '');
+            var replaced2 = replaced?.replace('"}]', '');
+            return (
+              <>
+                <Image src={replaced2 || require("../images/11.jpg")} width={200} height={200} alt="" />
+                <Image src={replaced2 || require("../images/11.jpg")} width={200} height={200} alt="" />
+                <Image src={replaced2 || require("../images/11.jpg")} width={200} height={200} alt="" />
+                <Image src={replaced2 || require("../images/11.jpg")} width={200} height={200} alt="" />
+                <Image src={replaced2 || require("../images/11.jpg")} width={200} height={200} alt="" />
+                <Image src={replaced2 || require("../images/11.jpg")} width={200} height={200} alt="" />
+                <Image src={replaced2 || require("../images/11.jpg")} width={200} height={200} alt="" />
+                <Image src={replaced2 || require("../images/11.jpg")} width={200} height={200} alt="" />
+                <Image src={replaced2 || require("../images/11.jpg")} width={200} height={200} alt="" />
+                <Image src={replaced2 || require("../images/11.jpg")} width={200} height={200} alt="" />
+                <Image src={replaced2 || require("../images/11.jpg")} width={200} height={200} alt="" />
+                <Image src={replaced2 || require("../images/11.jpg")} width={200} height={200} alt="" />
+                <Image src={replaced2 || require("../images/11.jpg")} width={200} height={200} alt="" />
+                <Image src={replaced2 || require("../images/11.jpg")} width={200} height={200} alt="" />
+                <Image src={replaced2 || require("../images/11.jpg")} width={200} height={200} alt="" />
+                <Image src={replaced2 || require("../images/11.jpg")} width={500} height={500} alt="" />
+              </>
+            );
+          })}
+        </div>
 
         <p className={styles.description}>
           Get started by editing{' '}
