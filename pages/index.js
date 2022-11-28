@@ -26,26 +26,24 @@ export default function Home() {
 
      
           {products?.map((item, index) => {
-            var replaced = item?.image.replace('[{"imageName":"', '');
-            var replaced2 = replaced?.replace('"}]', '');
+//             var replaced = item?.image.replace('[{"imageName":"', '');
+//             var replaced2 = replaced?.replace('"}]', '');
             return (
               <div key={index} style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
-                <Image src={replaced2 || require("../images/11.jpg")} width={200} height={200} alt="" />
-                <Image src={replaced2 || require("../images/11.jpg")} width={200} height={200} alt="" />
-                <Image src={replaced2 || require("../images/11.jpg")} width={200} height={200} alt="" />
-                <Image src={replaced2 || require("../images/11.jpg")} width={200} height={200} alt="" />
-                <Image src={replaced2 || require("../images/11.jpg")} width={200} height={200} alt="" />
-                <Image src={replaced2 || require("../images/11.jpg")} width={200} height={200} alt="" />
-                <Image src={replaced2 || require("../images/11.jpg")} width={200} height={200} alt="" />
-                <Image src={replaced2 || require("../images/11.jpg")} width={200} height={200} alt="" />
-                <Image src={replaced2 || require("../images/11.jpg")} width={200} height={200} alt="" />
-                <Image src={replaced2 || require("../images/11.jpg")} width={200} height={200} alt="" />
-                <Image src={replaced2 || require("../images/11.jpg")} width={200} height={200} alt="" />
-                <Image src={replaced2 || require("../images/11.jpg")} width={200} height={200} alt="" />
-                <Image src={replaced2 || require("../images/11.jpg")} width={200} height={200} alt="" />
-                <Image src={replaced2 || require("../images/11.jpg")} width={200} height={200} alt="" />
-                <Image src={replaced2 || require("../images/11.jpg")} width={200} height={200} alt="" />
-                <Image src={replaced2 || require("../images/11.jpg")} width={500} height={500} alt="" />
+                <Image src={item?.image || require("../images/11.jpg")} width={200} height={200} alt="" />
+                <Image src={item?.image || require("../images/11.jpg")} width={200} height={200} alt="" />
+                <Image src={item?.image || require("../images/11.jpg")} width={200} height={200} alt="" />
+                <Image src={item?.image || require("../images/11.jpg")} width={200} height={200} alt="" />
+                <Image src={item?.image || require("../images/11.jpg")} width={200} height={200} alt="" />
+                <Image src={item?.image || require("../images/11.jpg")} width={200} height={200} alt="" />
+                <Image src={item?.image || require("../images/11.jpg")} width={200} height={200} alt="" />
+                <Image src={item?.image || require("../images/11.jpg")} width={200} height={200} alt="" />
+                <Image src={item?.image || require("../images/11.jpg")} width={200} height={200} alt="" />
+                <Image src={item?.image || require("../images/11.jpg")} width={200} height={200} alt="" />
+                <Image src={item?.image || require("../images/11.jpg")} width={200} height={200} alt="" />
+                <Image src={item?.image || require("../images/11.jpg")} width={200} height={200} alt="" />
+                <Image src={item?.image || require("../images/11.jpg")} width={200} height={200} alt="" />
+                <Image src={item?.image || require("../images/11.jpg")} width={500} height={500} alt="" />
               </div>
             );
           })}
